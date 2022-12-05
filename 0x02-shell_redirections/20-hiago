@@ -1,2 +1,2 @@
 #!/bin/basih
-tr -d "c" "C"
+tr -d "cC"
