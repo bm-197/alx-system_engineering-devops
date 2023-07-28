@@ -4,11 +4,11 @@
 # displays good luck for the 8th loop iteration,
 # displays Best School for the other iterations.
 
-count=1
+count=0
 
 while [ $count -lt 10 ]
 do
-  if [ $count -eq 4 ]
+  if [ $count -eq 3 ]
   then
     echo "bad luck"
   elif [ $count -eq 7 ]
