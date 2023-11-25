@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Creates an RSA key pari
 
-ssh -keygen -f school -b 4096 -P betty
+ssh-keygen -f school -b 4096 -P betty
