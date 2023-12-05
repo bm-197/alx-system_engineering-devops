@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#customising a 404 page
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Hello world!" | sudo tee /var/www/html/index.html
+
+new_string="server_name _;\n\trewrite ^\/redirection_me https:\/\/github.com\/bm-197 permanent;"
+
+sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+
+sudo sed -i "server_name _;/a add_header X-Served-BY $HOSTNAME;" /etc/nginx/sites-enabled/default
+
+sudo nginx -t
+
+sudo service nginx restart
