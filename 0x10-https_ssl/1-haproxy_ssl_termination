@@ -47,5 +47,5 @@ frontend bisratsync-frontend-https
 
 backend bisratsync-backend
         balance roundrobin
-        server 151666-web-01 100.25.190.21:80 check
-        server 151666-web-02 54.160.77.90:80 check
+        server 208187-web-01 35.175.130.255:80 check
+        server 208187-web-02 52.207.208.2:80 check
