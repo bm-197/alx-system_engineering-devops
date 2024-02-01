@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+rm /etc/nginx/sites-enbaled/default
+
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+service nginx restart
