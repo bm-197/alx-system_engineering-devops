@@ -1,8 +1,8 @@
-#automating work using puppet
-
-packege { 'ngnix':
+package { 'nginx':
   ensure => installed,
 }
+
+
 file_line { 'install':
   ensure => 'present',
   path   => '/etc/nginx/sites_enabled/default',
