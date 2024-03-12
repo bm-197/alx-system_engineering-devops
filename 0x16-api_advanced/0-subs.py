@@ -11,8 +11,7 @@ def number_of_subscribers(subreddit):
     returns the number of subscribers (not active users, total subscribers)
     for a given subreddit.
     '''
-    user = {"User-Agent": "0x16-api_advanced:project:\
-v1.0.0 (by /u/bm-197)"}
+    user = {"User-Agent": "Mozilla/10.0/API"}
     url = requests.get('https://www.reddit.com/r/{}/about.json'.format(subreddit), headers=user).json()
 
     try:
