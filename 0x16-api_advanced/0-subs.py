@@ -1,14 +1,20 @@
-import requests
-from sys import argv
+#!/usr/bin/python3
+'''
+module for function to query the Reddit API
+'''
 
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+"""Function to query subscribers on a given Reddit subreddit."""
+import requests
 
 
 def number_of_subscribers(subreddit):
-    """"Get Subreddit subs number"""
-    req = requests.get(f"https://www.reddit.com/r/{subreddit}/about.json", headers=headers, allow_redirects=False)
-    if (req.json().get("kind") == 't5'):
-        data = req.json().get("data").get("subscribers")
-        return data
-    else:
+    """Return the total number of subscribers on a given subreddit."""
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    headers = {
+        "User-Agent": "Mozilla/10.0/API"
+    }
+    response = requests.get(url, headers=headers, allow_redirects=False)
+    if response.status_code == 404:
         return 0
+    results = response.json().get("data")
+    return results.get("subscribers")
